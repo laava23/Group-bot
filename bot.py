@@ -854,7 +854,7 @@ async def welcome_new_bot(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if old_status in ("left", "kicked") and new_status in ("member", "administrator"):
         settings_cache.pop(change.chat.id, None)
 
-      await send_temp(
+await send_temp(
     context, change.chat.id,
     "👋 Hello! I'm Group Link Guardian, created by @Ox_bluee.\n\n"
     "I help keep your group safe by controlling unwanted links, "
