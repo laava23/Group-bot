@@ -854,19 +854,16 @@ async def welcome_new_bot(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if old_status in ("left", "kicked") and new_status in ("member", "administrator"):
         settings_cache.pop(change.chat.id, None)
 
-        await send_temp(
-            context, change.chat.id,
-            "Hello! I am the Link & Spam Guard bot.\n\n"
-            "I limit how many links (and optionally images or text messages) "
-            "a member can send per day. Extra messages are deleted and the "
-            "member is muted.\n\n"
-            "Default: 3 links per day, then a 24 hour mute. "
-            "Admins are exempt.\n\n"
-            "Please make me admin with 'Delete messages' and "
-            "'Restrict members'.\n\n"
-            "Admins: send /help to see all commands.",
-            html_mode=False, kind="info",
-        )
+      await send_temp(
+    context, change.chat.id,
+    "👋 Hello! I'm Group Link Guardian, created by @Ox_bluee.\n\n"
+    "I help keep your group safe by controlling unwanted links, "
+    "images and spam.\n\n"
+    "Please make me an admin with 'Delete Messages' and "
+    "'Restrict Members' permissions.\n\n"
+    "📌 Admins: Send /help to explore all commands.",
+    html_mode=False, kind="info",
+)
 
 
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
